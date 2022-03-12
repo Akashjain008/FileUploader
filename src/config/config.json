@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "MAX_FILE_SIZE": "10e6",
+        "API_ENDPOINT": "http://localhost:8080/api",
+        "FILE_PROCESS_API": "/file/process"
+    },
+    "prod": {
+        "MAX_FILE_SIZE": "10e6",
+        "API_ENDPOINT": "http://localhost:8080/api",
+        "FILE_PROCESS_API": "/file/process"
+    }
+}
