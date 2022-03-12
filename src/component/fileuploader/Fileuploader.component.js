@@ -15,7 +15,10 @@ const Fileuploader = () => {
         try {
             const files = [...e.target.files];
             const uploadFileData = files[0];
-            if (uploadFileData.size > appConfig.MAX_FILE_SIZE) {
+            if (!uploadFileData) {
+                return;
+            }
+            if (uploadFileData.size && uploadFileData.size > appConfig.MAX_FILE_SIZE) {
                 window.alert("Please upload a file smaller than 10 MB");
                 return false;
             }
