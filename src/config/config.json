@@ -2,11 +2,13 @@
     "dev": {
         "MAX_FILE_SIZE": "10e6",
         "API_ENDPOINT": "http://localhost:8080/api",
-        "FILE_PROCESS_API": "/file/process"
+        "FILE_PROCESS_API": "/file/process",
+        "X_API_KEY": "Akashjain008"
     },
     "prod": {
         "MAX_FILE_SIZE": "10e6",
-        "API_ENDPOINT": "http://localhost:8080/api",
-        "FILE_PROCESS_API": "/file/process"
+        "API_ENDPOINT": "http://ec2-3-110-212-251.ap-south-1.compute.amazonaws.com:8080/api",
+        "FILE_PROCESS_API": "/file/process",
+        "X_API_KEY": "Akashjain008"
     }
 }

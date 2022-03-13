@@ -3,10 +3,8 @@ import CryptoJS from 'crypto-js';
 const BasicUtility = {
     decodeResponse: async (data, key) => {
         try {
-            console.log(data, key);
             const bytes = await CryptoJS.AES.decrypt(data, key);
             const originalText = bytes.toString(CryptoJS.enc.Utf8);
-            console.log(bytes, originalText);
             return originalText;
         } catch (err) {
             console.error('Error: decodeResponse', JSON.stringify(err));

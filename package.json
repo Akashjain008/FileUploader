@@ -13,7 +13,6 @@
     "react": "^17.0.2",
     "react-circular-progressbar": "^2.0.4",
     "react-dom": "^17.0.2",
-    "react-dropzone-uploader": "^2.11.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
@@ -24,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "aws s3 sync --delete public s3://akashproject.io --cache-control max-age=3600"
   },
   "eslintConfig": {
     "extends": [

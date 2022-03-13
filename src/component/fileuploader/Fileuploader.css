@@ -33,17 +33,7 @@ body {
     border-radius: 35% !important;
     caret-color: transparent;
 }
-/* .file-upload-failed {
-    stroke: #b11717 !important;
-    fill: #b11717 !important;
-}
-.file-upload-success  {
-    stroke: #008000 !important;
-    fill: #008000 !important;
-} */
-/* .file-upload-success  {
    
-} */
 .wrapper .file-upload input[type='file'] {
     height: 200px;
     width: 200px;
@@ -58,21 +48,16 @@ body {
     color: #2590eb; */
 }
 
-/* .CircularProgressbar .CircularProgressbar-path {
-    stroke: #008000 !important;
-} */
-
-/* .CircularProgressbar .CircularProgressbar-text {
-    fill: #008000 !important;
-}  */
 .file-upload-success > .CircularProgressbar-path {
     stroke: #008000 !important;
 }
 .file-upload-success > .CircularProgressbar-text {
     fill: #008000 !important;
+    pointer-events: none;
 }
 .file-upload-failed > .CircularProgressbar-path {
     stroke: #b11717 !important;
+    pointer-events: none;
 }
 .file-upload-failed > .CircularProgressbar-text {
     fill: #b11717 !important;

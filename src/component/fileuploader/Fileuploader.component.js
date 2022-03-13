@@ -41,6 +41,7 @@ const Fileuploader = () => {
         } catch (error) {
             console.log('Error: handleSubmit', JSON.stringify(error));
             let errorMessage = (error && error.message) ? error.message : 'Something went wrong, please try again.';
+            setShow(false);
             window.alert(errorMessage);
         }
     };
@@ -82,7 +83,7 @@ const Fileuploader = () => {
             };
             const encodeData = await BasicUtility.encodeRequest(sendRquest, customName);
             console.log('decodeReqData', encodeData);
-            const sendResult = await FileuploaderService.postFileData(encodeData);
+            const sendResult = await FileuploaderService.postFileData(encodeData, customName);
             console.log("Result: ", sendResult);
         } catch (err) {
             console.error('Error: postFileData', JSON.stringify(err));
@@ -94,7 +95,7 @@ const Fileuploader = () => {
         <div className="wrapper" >
             {!showProgress && <div className="file-upload start">
                 <input type="file" onChange={handleSubmit} autoFocus />
-                <img src={require('../../img/malwarebytes-main-logo_1.png')} className="file-logo" />
+                <img src={require('../../img/malwarebytes-main-logo_1.png')} className="file-logo" alt="logo"/>
             </div >}
             {showProgress && <div className={`file-upload end remove-border`}>
                 <CircularProgressbar value={showPercentage} text={`${showPercentage}%`} className={progess.status === 'success' ? 'file-upload-success' : 'file-upload-failed'} />

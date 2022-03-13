@@ -1,7 +1,6 @@
 import axios from "axios";
 import Config from "../../config/getConfig";
 const appConfig = Config.getConfig();
-// const API_ENDPOINT = "http://localhost:8080/api/file/process";
 
 const FileuploaderService = {
 
@@ -10,7 +9,8 @@ const FileuploaderService = {
             const response = await axios({
                 method: "GET",
                 headers: {
-                    'filename': filename
+                    'filename': filename,
+                    'x-api-key': appConfig.X_API_KEY
                 },
                 url: appConfig.API_ENDPOINT + appConfig.FILE_PROCESS_API,
             });
@@ -34,11 +34,16 @@ const FileuploaderService = {
             throw new Error(err);
         }
     },
-    postFileData: async (sendRquest) => {
+    postFileData: async (sendRquest, filename) => {
         try {
             const sendResult = await axios({
                 method: "POST",
-                data: sendRquest,
+                data: { "data": sendRquest },
+                headers: {
+                    'filename': filename,
+                    'Content-Type': 'application/json',
+                    'x-api-key': appConfig.X_API_KEY
+                },
                 url: appConfig.API_ENDPOINT + appConfig.FILE_PROCESS_API
             });
             return sendResult;

@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import { Helmet } from "react-helmet";
 import Fileuploader from "./component/fileuploader/Fileuploader.component";
